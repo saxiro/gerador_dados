@@ -1,0 +1,62 @@
+<%= form_with(model: compra, local: true) do |form| %>
+  <% if compra.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(compra.errors.count, "error") %> prohibited this compra from being saved:</h2>
+
+      <ul>
+      <% compra.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idade %>
+    <%= form.number_field :idade, id: :compra_idade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sexo %>
+    <%= form.text_field :sexo, id: :compra_sexo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado_civil %>
+    <%= form.text_field :estado_civil, id: :compra_estado_civil %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cidade %>
+    <%= form.text_field :cidade, id: :compra_cidade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bairro %>
+    <%= form.text_field :bairro, id: :compra_bairro %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.text_field :estado, id: :compra_estado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :produto %>
+    <%= form.text_field :produto, id: :compra_produto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preco %>
+    <%= form.text_field :preco, id: :compra_preco %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estabelecimento %>
+    <%= form.text_field :estabelecimento, id: :compra_estabelecimento %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

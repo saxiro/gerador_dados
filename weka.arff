@@ -1,0 +1,27 @@
+@RELATION compras
+
+@ATTRIBUTE id NUMERIC
+@ATTRIBUTE sexo STRING
+@ATTRIBUTE estado_civil STRING
+@ATTRIBUTE cidade STRING
+@ATTRIBUTE bairro STRING
+@ATTRIBUTE estado STRING
+@ATTRIBUTE produto STRING
+@ATTRIBUTE preco NUMERIC
+@ATTRIBUTE estabelecimento STRING
+@ATTRIBUTE data_compra DATE "yyyy-MM-dd"
+
+@DATA
+21,"M","CASADO","Viana do Descoberto","Lara do Sul","Santa Catarina","Aerodynamic Wool Clock",86.42,"Music & Kids","2017-09-17"
+22,"M","DIVORCIADO","Ambrósio de Nossa Senhora","Vila Washington do Descoberto","Maranhão","Awesome Concrete Watch",57.7,"Tools & Clothing","2017-09-14"
+23,"M","VIÚVO","Gonçalves de Nossa Senhora","Velha Fernanda","Rondônia","Heavy Duty Rubber Computer",86.31,"Clothing, Computers & Music","2017-10-13"
+24,"F","VIÚVO","Nova Daniel de Nossa Senhora","Grande Manuela de Nossa Senhora","Pernambuco","Incredible Rubber Pants",37.59,"Automotive","2017-10-08"
+25,"M","DIVORCIADO","Margarida do Descoberto","Batista do Norte","Alagoas","Small Concrete Wallet",1.38,"Electronics","2017-09-30"
+26,"F","VIÚVO","Lopes do Descoberto","Yasmin do Norte","Amapá","Heavy Duty Wooden Computer",25.58,"Computers & Electronics","2017-10-08"
+27,"M","DIVORCIADO","Nova Rebeca do Norte","Velha Emanuel","Rio de Janeiro","Mediocre Iron Pants",72.73,"Books & Computers","2017-09-28"
+28,"M","CASADO","Vila Lorena do Descoberto","Marcela do Descoberto","Minas Gerais","Durable Iron Wallet",83.01,"Industrial","2017-09-04"
+29,"M","VIÚVO","Marcelo do Descoberto","Souza do Norte","Amapá","Rustic Wool Watch",37.87,"Garden & Sports","2017-09-19"
+30,"F","SOLTEIRO","Grande Clara","Grande Gabriel de Nossa Senhora","São Paulo","Mediocre Cotton Table",19.22,"Books, Health & Home","2017-09-10"
+
+
+

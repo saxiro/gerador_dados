@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idade:</strong>
+  <%= @compra.idade %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <%= @compra.sexo %>
+</p>
+
+<p>
+  <strong>Estado civil:</strong>
+  <%= @compra.estado_civil %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @compra.cidade %>
+</p>
+
+<p>
+  <strong>Bairro:</strong>
+  <%= @compra.bairro %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @compra.estado %>
+</p>
+
+<p>
+  <strong>Produto:</strong>
+  <%= @compra.produto %>
+</p>
+
+<p>
+  <strong>Preco:</strong>
+  <%= @compra.preco %>
+</p>
+
+<p>
+  <strong>Estabelecimento:</strong>
+  <%= @compra.estabelecimento %>
+</p>
+
+<%= link_to 'Edit', edit_compra_path(@compra) %> |
+<%= link_to 'Back', compras_path %>
