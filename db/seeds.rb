@@ -8,11 +8,11 @@ Compra.destroy_all
   Compra.create(
     idade: (18..80).to_a.sample,
     sexo: ['M','F'].sample,
-    estado_civil: ['SOLTEIRO','CASADO','DIVORCIADO','VIÚVO'].sample,
+    estado_civil: ['SOLTEIRO','CASADO','DIVORCIADO','VIUVO'].sample,
     #cidade: Faker::Address.city,
     cidade: 'VITORIA',
     #bairro: Faker::Address.city,
-    bairro: ['CENTRO', 'SANTO ANTONIO', 'JUCUTUQUARA', 'MARUÍPE', 'PRAIA DO CANTO','SAO PEDRO','GOIABEIRAS','JARDIM CAMBURI','JARDIM DA PENHA'].sample,
+    bairro: ['CENTRO', 'SANTO ANTONIO', 'JUCUTUQUARA', 'MARUIPE', 'PRAIA DO CANTO','SAO PEDRO','GOIABEIRAS','JARDIM CAMBURI','JARDIM DA PENHA'].sample,
     #estado: Faker::Address.state,
     estado: 'ESPIRITO SANTO',
     produto: Faker::Commerce.product_name,
