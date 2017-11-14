@@ -7,8 +7,8 @@ Compra.destroy_all
 1000.times do
   Compra.create(
     idade: (18..80).to_a.sample,
-    sexo: ['M','F'].sample,
-    estado_civil: ['SOLTEIRO','CASADO','DIVORCIADO','VIUVO'].sample,
+    sexo: ['M','M','F','F','F'].sample,
+    estado_civil: ['SOLTEIRO','SOLTEIRO','SOLTEIRO','CASADO','CASADO','DIVORCIADO','VIUVO'].sample,
     #cidade: Faker::Address.city,
     cidade: 'VITORIA',
     #bairro: Faker::Address.city,
@@ -17,7 +17,8 @@ Compra.destroy_all
     estado: 'ESPIRITO SANTO',
     produto: Faker::Commerce.product_name,
     preco: Faker::Commerce.price,
-    estabelecimento: Faker::Commerce.department,
+    estabelecimento: ['INFORMATICA', 'BRINQUEDOS', 'CELULARES E TELEFONIA', 'ELETRODOMESTICOS', 'BELEZA E PERFUMARIA', 'GAMES', 'LIVROS', 'DECORACAO'].sample,
+    #estabelecimento: Faker::Commerce.department,
     data_compra: Faker::Date.between(60.days.ago, Date.today)
   )
 end
@@ -51,6 +52,6 @@ column_types_json = {
                                       "data_compra": "DATE \"yyyy-MM-dd\""
                                     }
                                   }
-File.open("1000REGISTROS.arff", "w") do |f|
+File.open("1000REGISTROS-teste.arff", "w") do |f|
   f.puts sample.convert column_types: column_types_json
 end
