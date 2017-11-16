@@ -47,3 +47,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 gem 'ffaker'
 gem 'to-arff'
+gem 'weighted_randomizer'

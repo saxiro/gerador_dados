@@ -11,6 +11,9 @@ class CreateCompras < ActiveRecord::Migration[5.1]
       t.decimal :preco
       t.string :estabelecimento
       t.string :data_compra
+      t.integer :data_compra_dia
+      t.integer :data_compra_mes
+      t.string :data_compra_semana
 
 
       t.timestamps

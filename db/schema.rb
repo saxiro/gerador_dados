@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 20171020185410) do
     t.decimal "preco"
     t.string "estabelecimento"
     t.string "data_compra"
+    t.integer "data_compra_dia"
+    t.integer "data_compra_mes"
+    t.string "data_compra_semana"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
