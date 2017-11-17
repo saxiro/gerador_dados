@@ -29,7 +29,24 @@ end
   d = randomizer.sample.to_datetime
 
   Compra.create(
-    idade: (18..80).to_a.sample,
+    #idade: (18..80).to_a.sample,
+    idade:['18-25',
+           '18-25',
+           '18-25',
+           '26-35',
+           '26-35',
+           '26-35',
+           '26-35',
+           '26-35',
+           '35-45',
+           '35-45',
+           '35-45',
+           '35-45',
+           '46-60',
+           '46-60',
+           '46-60',
+           'acima de 60'].sample,
+
     sexo: ['M','M','F','F','F'].sample,
     estado_civil: ['SOLTEIRO',
                    'SOLTEIRO',
@@ -41,7 +58,6 @@ end
                   ].sample,
 
     #cidade: Faker::Address.city,
-    cidade: 'VITORIA',
     #bairro: Faker::Address.city,
     bairro: ['CENTRO',
              'CENTRO',
@@ -64,9 +80,21 @@ end
 
 
     #estado: Faker::Address.state,
-    estado: 'ESPIRITO SANTO',
-    produto: Faker::Commerce.product_name,
-    preco: Faker::Commerce.price,
+    #produto: Faker::Commerce.product_name,
+    #preco: Faker::Commerce.price,
+    preco: ['ate 100',
+           'ate 100',
+           'ate 100',
+           'ate 100',
+           'ate 100',
+           'de 100 a 200',
+           'de 100 a 200',
+           'de 100 a 200',
+           'de 200 a 300',
+           'de 200 a 300',
+           'de 300 a 400',
+           'de 400 a 500',
+           'acima de 500'].sample,
     estabelecimento: ['INFORMATICA',
                       'INFORMATICA',
                       'INFORMATICA',
@@ -86,33 +114,11 @@ end
 
     #estabelecimento: Faker::Commerce.department,
     #data_compra: Faker::Date.between(60.days.ago, Date.today)
-    data_compra: d,
     #data_compra: d.strftime("%A")
     data_compra_dia:d.strftime("%d"),
     data_compra_mes:d.strftime("%m"),
     data_compra_semana: d.strftime("%A")
-    # data_compra_semana:['DOMINGO',
-    #                     'DOMINGO',
-    #                     'DOMINGO',
-    #                     'SEGUNDA',
-    #                     'TERCA',
-    #                     'QUARTA',
-    #                     'QUARTA',
-    #                     'QUINTA',
-    #                     'QUINTA',
-    #                     'SEXTA',
-    #                     'SEXTA',
-    #                     'SEXTA',
-    #                     'SEXTA',
-    #                     'SABADO',
-    #                     'SABADO',
-    #                     'SABADO',
-    #                     'SABADO',
-    #                     'SABADO',
-    #                     'SABADO',
-    #                     'SABADO',
-    #                     'SABADO'
-    # ].sample
+
   )
 end
 
@@ -133,22 +139,18 @@ end
 sample = ToARFF::SQLiteDB.new Rails.root.join("db","development.sqlite3")
 column_types_json = {
                                     "compras": {
-                                      "id": "NUMERIC",
                                       "sexo": "{F,M}",
                                       "estado_civil": "{DIVORCIADO, SOLTEIRO, VIUVO, CASADO}",
-                                      "cidade": "{VITORIA}",
                                       "bairro": "{CENTRO, 'SANTO ANTONIO', JUCUTUQUARA, MARUIPE, 'PRAIA DO CANTO', 'SAO PEDRO', GOIABEIRAS, 'JARDIM CAMBURI', 'JARDIM DA PENHA'}",
-                                      "estado": "{'ESPIRITO SANTO'}",
-                                      "produto": "STRING",
-                                      "preco": "NUMERIC",
+                                      "preco": "{'ate 100', 'de 100 a 200', 'de 200 a 300', 'de 300 a 400', 'de 400 a 500', 'acima de 500'}",
                                       "estabelecimento": "{INFORMATICA, BRINQUEDOS, 'CELULARES E TELEFONIA', ELETRODOMESTICOS, 'BELEZA E PERFUMARIA', GAMES, LIVROS, DECORACAO}",
-                                      "data_compra": "DATE \"yyyy-MM-dd\"",
                                       "data_compra_dia": "NUMERIC",
                                       "data_compra_mes": "NUMERIC",
-                                      "data_compra_semana": "{Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday}"
+                                      "data_compra_semana": "{Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday}",
+                                      "idade": "{'18-25', '26-35', '35-45', '46-60', 'acima de 60'}"
 
                                     }
                                   }
-File.open("teste.arff", "w") do |f|
+File.open("CartaoDeCreditoVarejo.arff", "w") do |f|
   f.puts sample.convert column_types: column_types_json
 end
