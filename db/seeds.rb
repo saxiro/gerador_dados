@@ -23,7 +23,7 @@ end
 
 
 
-1000.times do
+381.times do
   #d = Faker::Date.between('2016-01-01', '2016-12-31')
   randomizer = WeightedRandomizer.new(date_weight)
   d = randomizer.sample.to_datetime
@@ -31,10 +31,6 @@ end
   Compra.create(
     #idade: (18..80).to_a.sample,
     idade:['18-25',
-           '18-25',
-           '18-25',
-           '26-35',
-           '26-35',
            '26-35',
            '26-35',
            '26-35',
@@ -44,15 +40,18 @@ end
            '35-45',
            '46-60',
            '46-60',
-           '46-60',
+           'acima de 60',
            'acima de 60'].sample,
 
-    sexo: ['M','M','F','F','F'].sample,
+    sexo: 'M',
     estado_civil: ['SOLTEIRO',
                    'SOLTEIRO',
                    'SOLTEIRO',
                    'CASADO',
                    'CASADO',
+                   'CASADO',
+                   'CASADO',
+                   'DIVORCIADO',
                    'DIVORCIADO',
                    'VIUVO'
                   ].sample,
@@ -91,23 +90,23 @@ end
            'de 100 a 200',
            'de 100 a 200',
            'de 200 a 300',
-           'de 200 a 300',
-           'de 300 a 400',
            'de 400 a 500',
            'acima de 500'].sample,
     estabelecimento: ['INFORMATICA',
                       'INFORMATICA',
                       'INFORMATICA',
-                      'BRINQUEDOS',
+                      'INFORMATICA',
+                      'INFORMATICA',
                       'BRINQUEDOS',
                       'BRINQUEDOS',
                       'CELULARES E TELEFONIA',
                       'ELETRODOMESTICOS',
                       'BELEZA E PERFUMARIA',
-                      'BELEZA E PERFUMARIA',
-                      'BELEZA E PERFUMARIA',
                       'GAMES',
                       'GAMES',
+                      'GAMES',
+                      'GAMES',
+                      'LIVROS',
                       'LIVROS',
                       'DECORACAO'
                      ].sample,
@@ -121,6 +120,125 @@ end
 
   )
 end
+
+
+
+
+#TESTE 2
+
+619.times do
+  #d = Faker::Date.between('2016-01-01', '2016-12-31')
+  randomizer = WeightedRandomizer.new(date_weight)
+  d = randomizer.sample.to_datetime
+
+  Compra.create(
+    #idade: (18..80).to_a.sample,
+    idade:['18-25',
+           '18-25',
+           '18-25',
+           '26-35',
+           '26-35',
+           '26-35',
+           '35-45',
+           '35-45',
+           '35-45',
+           '35-45',
+           '46-60',
+           '46-60',
+           'acima de 60'
+         ].sample,
+
+    sexo: 'F',
+    estado_civil: ['SOLTEIRO',
+                   'SOLTEIRO',
+                   'SOLTEIRO',
+                   'CASADO',
+                   'CASADO',
+                   'DIVORCIADO',
+                   'DIVORCIADO',
+                   'DIVORCIADO',
+                   'VIUVO'
+                  ].sample,
+
+    #cidade: Faker::Address.city,
+    #bairro: Faker::Address.city,
+    bairro: ['CENTRO',
+             'CENTRO',
+             'CENTRO',
+             'CENTRO',
+             'CENTRO',
+             'SANTO ANTONIO',
+             'SANTO ANTONIO',
+             'SANTO ANTONIO',
+             'JUCUTUQUARA',
+             'JUCUTUQUARA',
+             'MARUIPE',
+             'MARUIPE',
+             'PRAIA DO CANTO',
+             'PRAIA DO CANTO',
+             'PRAIA DO CANTO',
+             'SAO PEDRO',
+             'SAO PEDRO',
+             'GOIABEIRAS',
+             'JARDIM CAMBURI',
+             'JARDIM CAMBURI',
+             'JARDIM CAMBURI',
+             'JARDIM DA PENHA'
+            ].sample,
+
+
+
+    #estado: Faker::Address.state,
+    #produto: Faker::Commerce.product_name,
+    #preco: Faker::Commerce.price,
+    preco: ['ate 100',
+           'ate 100',
+           'de 100 a 200',
+           'de 100 a 200',
+           'de 100 a 200',
+           'de 200 a 300',
+           'de 200 a 300',
+           'de 200 a 300',
+           'de 200 a 300',
+           'de 300 a 400',
+           'de 300 a 400',
+           'de 400 a 500',
+           'acima de 500'].sample,
+    estabelecimento: ['INFORMATICA',
+                      'BRINQUEDOS',
+                      'BRINQUEDOS',
+                      'BRINQUEDOS',
+                      'BRINQUEDOS',
+                      'CELULARES E TELEFONIA',
+                      'CELULARES E TELEFONIA',
+                      'ELETRODOMESTICOS',
+                      'ELETRODOMESTICOS',
+                      'BELEZA E PERFUMARIA',
+                      'BELEZA E PERFUMARIA',
+                      'BELEZA E PERFUMARIA',
+                      'BELEZA E PERFUMARIA',
+                      'BELEZA E PERFUMARIA',
+                      'GAMES',
+                      'LIVROS',
+                      'LIVROS',
+                      'LIVROS',
+                      'DECORACAO',
+                      'DECORACAO',
+                      'DECORACAO'
+                     ].sample,
+
+    #estabelecimento: Faker::Commerce.department,
+    #data_compra: Faker::Date.between(60.days.ago, Date.today)
+    #data_compra: d.strftime("%A")
+    data_compra_dia:d.strftime("%d"),
+    data_compra_mes:d.strftime("%m"),
+    data_compra_semana: d.strftime("%A")
+
+  )
+end
+
+#TESTE 2
+
 
 # Comando rails db:seed
 
@@ -151,6 +269,6 @@ column_types_json = {
 
                                     }
                                   }
-File.open("CartaoDeCreditoVarejo.arff", "w") do |f|
+File.open("GuerraDosSexos.arff", "w") do |f|
   f.puts sample.convert column_types: column_types_json
 end
